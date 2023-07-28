@@ -11,21 +11,18 @@
 <h1>TICKETS</h1>
 <section>
     <h2>Select Tickets</h2>
-    
-    <label>
-      <input type="radio" name="ticket" value="regular">
-      Regular
-    </label>
-  
-    <label>  
-      <input type="radio" name="ticket" value="vip">
-      VIP
-    </label>
   
     <label>
       Quantity:
       <input type="number" id="quantity" value="1">
     </label>
+
+    <label for="ticket-type">Ticket Type:</label>
+
+<select id="ticket-type">
+  <option value="regular">Regular</option>
+  <option value="vip">VIP</option>
+</select>
   
   </section>
 
@@ -72,8 +69,8 @@
     <h2>Tent Rental</h2>
   
     <label>
-      <input type="checkbox" id="tent">
-      Rent tent ($100) 
+      <input type="checkbox" id="tent2"> 2 Person
+<input type="checkbox" id="tent3"> 3 Person
     </label>
   
   </section>
