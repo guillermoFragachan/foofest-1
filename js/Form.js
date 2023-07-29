@@ -1,8 +1,8 @@
 import { useState } from "react";
-import NameInput from "./NameInput";
-import EmailInput from "./EmailInput";
-import SpotsInput from "./SpotsInput";
-import AreaInput from "./AreaInput";
+import TicketSelection from "./TicketSelection";
+import OptionalExtras from "./OptionalExtras";
+import PersonalInfo from "./PersonalInfo";
+import GuestInfo from "./GuestInfo";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -18,6 +18,8 @@ const Form = () => {
     personalInfo: [], // array to store personal info for multiple tickets
   });
 
+  const [currentStep, setCurrentStep] = useState(0); // new state for handling current form step
+
   const handleChange = (e) => {
     let value =
       e.target.type === "checkbox" ? e.target.checked : e.target.value;
@@ -29,72 +31,57 @@ const Form = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formData);
+    const totalSteps = formData.numberOfTickets > 1 ? 3 : 2;
+
+    if (currentStep === totalSteps) {
+      console.log(formData);
+    } else {
+      alert("Please complete all steps before submitting the form!");
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <NameInput formData={formData} handleChange={handleChange} />
-
-      <label>
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
+      {currentStep === 0 && (
+        <TicketSelection
+          handleChange={handleChange}
+          formData={formData}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
         />
-      </label>
-
-      <label>
-        Ticket Type:
-        <select
-          name="ticketType"
-          value={formData.ticketType}
-          onChange={handleChange}
-        >
-          <option value="">--Please choose an option--</option>
-          <option value="regular">Regular</option>
-          <option value="vip">VIP</option>
-        </select>
-      </label>
-
-      <label>
-        Number of Tickets:
-        <input
-          type="number"
-          name="numberOfTickets"
-          value={formData.numberOfTickets}
-          min="1"
-          onChange={handleChange}
-        />
-      </label>
-
-      <label>
-        Prebook Camping Spot:
-        <input
-          type="checkbox"
-          name="camping"
-          checked={formData.camping}
-          onChange={handleChange}
-        />
-      </label>
-
-      {formData.camping && (
-        <label>
-          Camping Type:
-          <select
-            name="campingType"
-            value={formData.campingType}
-            onChange={handleChange}
-          >
-            <option value="">--Please choose an option--</option>
-            <option value="green">Green Camping</option>
-            <option value="regular">Regular Camping</option>
-          </select>
-        </label>
       )}
-      <button type="submit">Submit</button>
+      {currentStep === 1 && (
+        <OptionalExtras
+          handleChange={handleChange}
+          formData={formData}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        />
+      )}
+      {currentStep === 2 && formData.numberOfTickets > 1 && (
+        <GuestInfo
+          handleChange={handleChange}
+          formData={formData}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        />
+      )}
+      {currentStep === 2 && formData.numberOfTickets === 1 && (
+        <PersonalInfo
+          handleChange={handleChange}
+          formData={formData}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        />
+      )}
+      {currentStep === 3 && (
+        <PersonalInfo
+          handleChange={handleChange}
+          formData={formData}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        />
+      )}
     </form>
   );
 };
