@@ -1,0 +1,66 @@
+.
+├── APP-REQUIREMENTS.md
+├── DEPLOYMENT-FLY.io.md
+├── DEPLOYMENT-GIT.md
+├── DEPLOYMENT-GLITCH.md
+├── DEPLOYMENT.md
+├── FORM-REQUIREMENTS.md
+├── README.md
+├── TESTING.md
+├── TODO.md
+├── app.json
+├── css
+│   └── main.css
+├── deployment
+│   ├── flyiofree.png
+│   ├── instructions1.png
+│   ├── instructions2.png
+│   ├── instructions3.png
+│   ├── instructions4.png
+│   └── instructions5.png
+├── index.html
+├── js
+│   ├── Form.js
+│   ├── NameInput.js
+│   └── main.js
+├── output.txt
+├── package-lock.json
+├── package.json
+├── public
+│   └── logos
+│       ├── 1280px-RefusedWayOutWest.jpg
+│       ├── 620px-Black_Sabbath_(Iommi,_Osbourne,_Ward_and_Butler).JPG
+│       ├── 640px-GNR_London_Stadium_2017_3_(cropped).jpg
+│       ├── 640px-Metallica_Live_at_The_O2,_London,_England,_22_October_2017_(cropped).jpg
+│       ├── 640px-Who_-_1975.jpg
+│       ├── 720px-Queen_–_montagem_–_new.png
+│       ├── 720px-The_Fabs.JPG
+│       ├── ACDC_In_Tacoma_2009.jpg
+│       ├── A_Perfect_Circle_Logo_2011_-_Michael_John_Stinsman_InvisibleStudio_Productions.png
+│       ├── LedZeppelinmontage.jpg
+│       ├── Nirvana_around_1992.jpg
+│       ├── Pink_Floyd_-_all_members.jpg
+│       ├── The_Rolling_Stones_Summerfest_in_Milwaukee_-_2015.jpg
+│       ├── Tool_logo_2006.svg
+│       ├── raised_fist.jpg
+│       └── terminalist.jpg
+├── restartServer.png
+├── server.js
+└── src
+    ├── Bands.js
+    ├── Booking.js
+    ├── EventLog.js
+    ├── Festival.js
+    ├── Schedule.js
+    ├── foofest.js
+    ├── static
+    │   ├── bands.json
+    │   └── settings.js
+    └── util
+        ├── events.js
+        ├── numberToTime.js
+        ├── observer.js
+        ├── rnd.js
+        └── shuffle.js
+
+9 directories, 55 files
