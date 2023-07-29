@@ -1,4 +1,8 @@
 import { useState } from "react";
+import NameInput from "./NameInput";
+import EmailInput from "./EmailInput";
+import SpotsInput from "./SpotsInput";
+import AreaInput from "./AreaInput";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +13,9 @@ const Form = () => {
     camping: false, // whether the user wants to prebook a camping spot
     campingType: "", // Green camping or not
     numberOfTents: 0, // the number of tents the user wants the crew to set up
+    tentType: "", // 2-person or 3-person tent
+    bookingFee: false, // whether the booking fee has been paid
+    personalInfo: [], // array to store personal info for multiple tickets
   });
 
   const handleChange = (e) => {
