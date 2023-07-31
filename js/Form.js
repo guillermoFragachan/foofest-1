@@ -29,6 +29,16 @@ const Form = () => {
     });
   };
 
+  const handleNext = () => {
+    if (formData.ticketType === "") {
+      alert("Please select a ticket type.");
+    } else if (formData.numberOfTickets < 1) {
+      alert("Please select a number of tickets.");
+    } else {
+      setCurrentStep(currentStep + 1);
+    }
+  };  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const totalSteps = formData.numberOfTickets > 1 ? 3 : 2;
@@ -76,6 +86,14 @@ const Form = () => {
       )}
       {currentStep === 3 && (
         <PersonalInfo
+          handleChange={handleChange}
+          formData={formData}
+          currentStep={currentStep}
+          setCurrentStep={setCurrentStep}
+        />
+      )}
+      {currentStep === 3 && formData.numberOfTickets > 1 && (
+        <GuestInfo
           handleChange={handleChange}
           formData={formData}
           currentStep={currentStep}
