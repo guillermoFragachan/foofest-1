@@ -2,7 +2,7 @@ import { useState } from "react";
 import TicketSelection from "./TicketSelection";
 import OptionalExtras from "./OptionalExtras";
 import PersonalInfo from "./PersonalInfo";
-import GuestInfo from "./GuestInfo";
+import {GuestInfo} from "../pages/GuestInfo";
 
 const Form = () => {
   const [formData, setFormData] = useState({

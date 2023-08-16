@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import GuestInfo from './js/GuestInfo';
+import GuestInfo from './pages/GuestInfo';
 
 function App() {
   return (
