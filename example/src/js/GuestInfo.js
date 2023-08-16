@@ -1,4 +1,4 @@
-const GuestInfo = ({
+export const GuestInfo = ({
     handleChange,
     formData,
     currentStep,
